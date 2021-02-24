@@ -1,0 +1,36 @@
+{
+  "name": "twilio_turn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "token.js",
+  "keywords": [
+    "heroku",
+    "express",
+    "twilio",
+    "stun",
+    "turn",
+    "webrtc",
+    "ice servers"
+  ],
+  "scripts": {
+    "start": "node token.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pug": "^2.0.4",
+    "twilio": "^3.42.1"
+  },
+  "devDependencies": {
+    "jest": "^25.3.0",
+    "supertest": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@altanai",
+  "license": "ISC",
+  "homepage": "https://github.com/altanai/twillio_turn"
+}
