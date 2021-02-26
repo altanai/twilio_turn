@@ -1,31 +1,24 @@
 require('dotenv').config();
-
-// const properties = require("./env");
-// var options = {
-//     key: fs.readFileSync(properties.key),
-//     cert: fs.readFileSync(properties.cert),
-//     ca: fs.readFileSync(properties.ca),
-//     requestCert: true,
-//     rejectUnauthorized: false
-// };
 console.log('Environment variable TWILIO_ACCOUNT_SID has the value: ', process.env.TWILIO_ACCOUNT_SID);
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
-
 const client = require('twilio')(accountSid, authToken);
 
-
-
-
-
 const app = require('express')();
+const fs = require('fs');
 const bodyParser = require('body-parser');
+
+var http = require('http');
+var https = require('https');
+var privateKey = fs.readFileSync( process.env.privateKey );
+var certificate = fs.readFileSync( process.env.certificate );
+
+
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
 app.post('/', (req, res, next) => {
-    console.log(req);
+    // console.log(req);
     client.tokens.create()
         .then(token => {
             console.log(token);
@@ -36,4 +29,15 @@ app.post('/', (req, res, next) => {
         });
 });
 
-app.listen(3000);
+
+const port=3000;
+const secureport=3001;
+
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer({
+    key: privateKey,
+    cert: certificate
+}, app);
+
+httpServer.listen(port);
+httpsServer.listen(secureport);

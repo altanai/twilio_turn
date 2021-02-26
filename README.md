@@ -16,6 +16,11 @@ npm install
 npm start
 ```
 
+check its working by opening another tab and listening for port specified 
+```shell
+netstat -anp | grep 3000
+```
+
 ## Test 
 ```shell
 curl -X POST http://localhost:3000

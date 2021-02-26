@@ -13,6 +13,7 @@
     "ice servers"
   ],
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node token.js"
   },
   "dependencies": {
@@ -27,10 +28,14 @@
     "jest": "^25.3.0",
     "supertest": "^4.0.2"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "@altanai",
   "license": "ISC",
-  "homepage": "https://github.com/altanai/twillio_turn"
+  "homepage": "https://github.com/altanai/twillio_turn",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altanai/twillio_turn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/altanai/twillio_turn/issues"
+  }
 }
