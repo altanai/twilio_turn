@@ -11,27 +11,28 @@ const bodyParser = require('body-parser');
 
 var http = require('http');
 var https = require('https');
-var privateKey = fs.readFileSync( process.env.privateKey );
-var certificate = fs.readFileSync( process.env.certificate );
+var privateKey = fs.readFileSync(process.env.privateKey);
+var certificate = fs.readFileSync(process.env.certificate);
+var cors = require('cors');
 
-
+app.use(cors());
 app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.post('/', (req, res, next) => {
-    // console.log(req);
+app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
+app.post('/token', cors(), (req, res, next) => {
+    console.log("Token request received ");
     client.tokens.create()
         .then(token => {
             console.log(token);
             res.send(token);
         })
-        .catch(err=>{
+        .catch(err => {
             console.error(err);
         });
 });
 
 
-const port=3000;
-const secureport=3001;
+const port = 3000;
+const secureport = 3001;
 
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer({
