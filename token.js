@@ -33,7 +33,6 @@ app.post('/token', cors(), (req, res, next) => {
 
 const port = 3000;
 const secureport = 3001;
-
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer({
     key: privateKey,
