@@ -1,6 +1,6 @@
 {
   "name": "twilio_turn",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "description": "Express web-server with API endpoint to get Twilio STUN/TURN with realtime token",
   "main": "token.js",
   "keywords": [
@@ -14,7 +14,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node token.js"
+    "start": "NODE_ENV=prod node token.js",
+    "dev": "NODE_ENV=dev node token.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

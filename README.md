@@ -1,18 +1,52 @@
 # TURN Twilio 
 
+Express REST API server for hosting the turn credential fetching SDK interaction server side part for a webrtc session
+
+Features
+- securely fetches Twilio turn cred in realtime in backend
+- Environment variables
+- REST api for secure and unsecure ports 
+- does not expose twilio cred
+- sh script to fast install and run the application if launching from a docker container
+
+
 ## Setup
 Obtain the values from twilio dashboard 
 ![twilio console](tbd)
 
-Add sid and auth token variable values to .env file 
+1. Add sid and auth token variable values to .env file 
+
 
     echo "export TWILIO_ACCOUNT_SID='ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'" > .env
     echo "export TWILIO_AUTH_TOKEN='your_auth_token'" >> .env
 
+2. Add location for ssl certs for hosting the secure api server to .env file
+
+
+    privateKey='ssl_certs/server.key'
+    certificate='ssl_certs/server.crt'
+
+4. Add secure and non secure ports to .env file 
+
+
+    tokenport=3000
+    tokensecureport=3001
+
+Note : After hosting the app on ec2 or similar cloud server , ensure the port for rest apis accessible / open on TCP
+
+Sample .env.dev file 
+
+    TWILIO_ACCOUNT_SID='xx'
+    TWILIO_AUTH_TOKEN='yy'
+    privateKey='/home/altanai/Documents/webrtcdev/twilio_turn/ssl_certs/server.key'
+    certificate='/home/altanai/Documents/webrtcdev/twilio_turn/ssl_certs/server.crt'
+    tokenport=3000
+    tokensecureport=3001
 
 ## Run
 
 set the environment for dotenv files to pick up location of ssl certs for host the api servera nd twillio creds 
+Manual Starting the application with environment varaible 
 
     NODE_ENV=dev node token.js
 
