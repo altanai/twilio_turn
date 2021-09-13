@@ -19,3 +19,6 @@ npm install pm2@latest -g
 apt update && apt install sudo curl && curl -sL https://raw.githubusercontent.com/Unitech/pm2/master/packager/setup.deb.sh | sudo -E bash -
 
 #openssl x509 -outform der -in your-cert.pem -out your-cert.crt
+
+#Make file executable
+chmod +x MAKEFILE.sh

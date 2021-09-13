@@ -147,4 +147,6 @@ The options used in this command have the following meaning:
 
     [PM2][ERROR] Script not found:
 
-**solution** 
+**solution**
+    
+    pm2 start npm --name twilio_turn twilio_turn

@@ -1,6 +1,7 @@
 #!/bin/bash
 #sh UNINSTALL
 
+npm unlink                   # No more command installed
 npm uninstall `ls -1 node_modules | tr '/\n' ' '`
 
 npm cache clear
