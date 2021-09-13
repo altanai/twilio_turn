@@ -11,3 +11,10 @@ if [ "${RUNNING}" -ne 0 ]; then
 else
   echo " Running of stopped"
 fi;
+
+#  "scripts": {
+#    "test": "echo \"Error: no test specified\" && exit 1",
+#    "start": "DEBUG=* node token.js",
+#    "prod": "NODE_ENV=prod node token.js",
+#    "dev": "NODE_ENV=dev node token.js"
+#  },

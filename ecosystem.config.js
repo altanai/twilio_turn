@@ -1,6 +1,6 @@
 module.exports = {
     apps : [{
-        name: "twilio_token",
+        name: "token",
         script: 'token.js',
         watch: ["server", "client"],
         watch_delay: 1000,

@@ -20,7 +20,20 @@ apt update && apt install sudo curl && curl -sL https://raw.githubusercontent.co
 
 #openssl x509 -outform der -in your-cert.pem -out your-cert.crt
 
+
+
+npm install -g npm@latest
+npm update
+npm install
+
+# audit Fix Auto and list modules
+npm audit fix
+npm list -g --depth 0
+npm list
+pm2 update
+
 #Make file executable
 chmod +x MAKEFILE.sh
 #symlink
 npm link twilio_turn
+

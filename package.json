@@ -1,6 +1,6 @@
 {
   "name": "twilio_turn",
-  "version": "1.6.29",
+  "version": "1.6.35",
   "description": "Express web-server with API endpoint to get Twilio STUN/TURN with realtime token",
   "keywords": [
     "heroku",

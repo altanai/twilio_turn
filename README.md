@@ -16,7 +16,8 @@ Features
 
 Output 
 
-        
+    4|token    | ENV file .env.prod
+    4|token    | Token request received
 
 ## Setup
 Obtain the values from twilio dashboard 
@@ -156,3 +157,27 @@ The options used in this command have the following meaning:
 **solution**
     
     pm2 start npm --name twilio_turn twilio_turn
+
+**Issue3** 
+
+    3|token    |     at Object.Module._extensions..js (internal/modules/cjs/loader.js:785:10)
+    3|token    | RestException [Error]: Resource not accessible with Test Account Credentials
+    3|token    |     at success (/home/ubuntu/.nvm/versions/node/v12.4.0/lib/node_modules/twilio_turn/node_modules/twilio/lib/base/Version.js:135:15)
+    3|token    |     at Promise_then_fulfilled (/home/ubuntu/.nvm/versions/node/v12.4.0/lib/node_modules/twilio_turn/node_modules/q/q.js:766:44)
+    3|token    |     at Promise_done_fulfilled (/home/ubuntu/.nvm/versions/node/v12.4.0/lib/node_modules/twilio_turn/node_modules/q/q.js:835:31)
+    3|token    |     at Fulfilled_dispatch [as dispatch] (/home/ubuntu/.nvm/versions/node/v12.4.0/lib/node_modules/twilio_turn/node_modules/q/q.js:1229:9)
+    3|token    |     at Pending_become_eachMessage_task (/home/ubuntu/.nvm/versions/node/v12.4.0/lib/node_modules/twilio_turn/node_modules/q/q.js:1369:30)
+    3|token    |     at RawTask.call (/home/ubuntu/.nvm/versions/node/v12.4.0/lib/node_modules/twilio_turn/node_modules/asap/asap.js:40:19)
+    3|token    |     at flush (/home/ubuntu/.nvm/versions/node/v12.4.0/lib/node_modules/twilio_turn/node_modules/asap/raw.js:50:29)
+    3|token    |     at processTicksAndRejections (internal/process/task_queues.js:82:9) {
+    3|token    |   status: 403,
+    3|token    |   code: 20008,
+    3|token    |   moreInfo: 'https://www.twilio.com/docs/errors/20008',
+    3|token    |   details: undefined
+    3|token    | }
+
+**solution** Under twilio console -> Manage Account -> General settings , there is a section to see API credentials for cqatagories in 
+"LIVE Credentials" as well as "TEST Credentials" . It is mentioned under ACCOUNT SID and AUTH TOKEN.
+Select the ones based on your environment .
+
+For prod setups and cross-origin requests it is better to go with Twilio's Live credentials 

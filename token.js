@@ -1,5 +1,8 @@
-require('dotenv').config({path: `.env.${process.env.NODE_ENV}`});
+if(! process.env.NODE_ENV)
+    process.env.NODE_ENV ="prod";
 console.log('ENV file .env.' + process.env.NODE_ENV);
+
+require('dotenv').config({path: `.env.${process.env.NODE_ENV}`});
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
