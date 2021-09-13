@@ -1,5 +1,5 @@
-require('dotenv').config();
-console.log('Environment variable TWILIO_ACCOUNT_SID has the value: ', process.env.TWILIO_ACCOUNT_SID);
+require('dotenv').config({path: `.env.${process.env.NODE_ENV}`});
+console.log('ENV file .env.' + process.env.NODE_ENV);
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
@@ -21,9 +21,10 @@ app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-w
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
+    // res.header('Authorization', "Bearer " + accessToken );
     res.header('Access-Control-Allow-Credentials', 'true');
-    res.header("Access-Control-Allow-Methods","GET,HEAD,OPTIONS,POST,PUT");
-    res.header("Access-Control-Allow-Headers","*");
+    res.header("Access-Control-Allow-Methods",'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+    res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept, Authorization");
     next();
 });
 
@@ -40,8 +41,8 @@ app.post('/token', cors(), (req, res, next) => {
 });
 
 
-const port = 3000;
-const secureport = 3001;
+const port = process.env.tokenport;
+const secureport = process.env.tokensecureport;
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer({
     key: privateKey,

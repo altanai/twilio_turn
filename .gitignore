@@ -1,3 +1,5 @@
 .env
+.env.dev
 package-lock.json
 node_modules
+ssl_certs/
