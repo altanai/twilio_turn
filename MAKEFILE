@@ -20,7 +20,7 @@ npm list
 pm2 update
 
 
-pm2 describe appname > /dev/null
+pm2 describe twilio_turn > /dev/null
 RUNNING=$?
 
 if [ "${RUNNING}" -ne 0 ]; then

@@ -10,6 +10,8 @@ Features
 - sh script to fast install and run the application if launching from a docker container
 
 
+    ./node_modules/twilio_turn
+
 ## Setup
 Obtain the values from twilio dashboard 
 ![twilio console](tbd)
@@ -17,8 +19,8 @@ Obtain the values from twilio dashboard
 1. Add sid and auth token variable values to .env file 
 
 
-    echo "export TWILIO_ACCOUNT_SID='ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'" > .env
-    echo "export TWILIO_AUTH_TOKEN='your_auth_token'" >> .env
+    echo "export TWILIO_ACCOUNT_SID='ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'" > .env.prod
+    echo "export TWILIO_AUTH_TOKEN='your_auth_token'" >> .env.prod
 
 2. Add location for ssl certs for hosting the secure api server to .env file
 
@@ -43,7 +45,7 @@ Sample .env.dev file
     tokenport=3000
     tokensecureport=3001
 
-## Run
+## Manual Run
 
 set the environment for dotenv files to pick up location of ssl certs for host the api servera nd twillio creds 
 Manual Starting the application with environment varaible 
