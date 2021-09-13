@@ -140,3 +140,9 @@ The options used in this command have the following meaning:
     how to fix it, please visit the web page mentioned above.
 
 **solution** add the -k or --insecure  switch to disable SSL certificate verification.
+
+**Issue2** pm2 script stat error 
+
+    [PM2][ERROR] Script not found:
+
+**solution** 
