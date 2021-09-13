@@ -9,8 +9,14 @@ Features
 - does not expose twilio cred
 - sh script to fast install and run the application if launching from a docker container
 
+## Quick start 
 
-    ./node_modules/twilio_turn
+    npm i twilio_turn -g
+    twilio_turn
+
+Output 
+
+        
 
 ## Setup
 Obtain the values from twilio dashboard 

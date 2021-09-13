@@ -1,8 +1,7 @@
 {
   "name": "twilio_turn",
-  "version": "1.5.7",
+  "version": "1.6.29",
   "description": "Express web-server with API endpoint to get Twilio STUN/TURN with realtime token",
-  "main": "token.js",
   "keywords": [
     "heroku",
     "express",
@@ -12,13 +11,8 @@
     "webrtc",
     "ice servers"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "DEBUG=* NODE_ENV=prod node token.js",
-    "dev": "NODE_ENV=dev node token.js"
-  },
   "bin": {
-    "twilio_turn": "MAKEFILE.sh"
+    "twilio_turn": "/bin/MAKEFILE.sh"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

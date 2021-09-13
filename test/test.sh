@@ -1,3 +1,8 @@
+#!/bin/bash
+echo $(date)
+global_node_modules="$(npm root --global)"
+echo "Global packages installed in: ${global_node_modules}"
+
 pm2 describe twilio_turn > /dev/null
 RUNNING=$?
 

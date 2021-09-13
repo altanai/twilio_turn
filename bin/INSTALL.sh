@@ -22,3 +22,5 @@ apt update && apt install sudo curl && curl -sL https://raw.githubusercontent.co
 
 #Make file executable
 chmod +x MAKEFILE.sh
+#symlink
+npm link twilio_turn
